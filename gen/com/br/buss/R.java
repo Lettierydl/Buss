@@ -196,6 +196,7 @@ containing a value of this type.
     }
     public static final class menu {
         public static final int main=0x7f090000;
+        public static final int onibus_view=0x7f090001;
     }
     public static final class string {
         public static final int action_settings=0x7f060016;
@@ -279,6 +280,7 @@ containing a value of this type.
          */
         public static final int common_signin_button_text_long=0x7f06000e;
         public static final int hello_world=0x7f060017;
+        public static final int title_activity_onibus_view=0x7f060018;
     }
     public static final class style {
         /** 

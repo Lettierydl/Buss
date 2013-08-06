@@ -1,6 +1,6 @@
-package com.br.buss.geografic;
+package com.br.buss.geografic.aux;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import android.content.Context;
@@ -9,12 +9,12 @@ import android.location.Address;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
 
-public class Route {
-	private final List<LatLng> points;
+public class CriadoraDeRota {
+	private final LinkedList<LatLng> points;
 	private String polyline;
 
-	public Route() {
-		points = new ArrayList<LatLng>();
+	public CriadoraDeRota() {
+		points = new LinkedList<LatLng>();
 	}
 
 	public void addPoints(final List<LatLng> points) {
@@ -42,7 +42,7 @@ public class Route {
 			     
 	}
 
-	public static void criarRota(Context ctx, GoogleMap map,
+	public static void pintarRota(Context ctx, GoogleMap map,
 			Address origem, Address destino) {
 		new RotaAsyncTask(ctx, map).execute(  
 			      // Latitude, Logintude de Origem  
@@ -51,5 +51,7 @@ public class Route {
 			      destino.getLatitude(), destino.getLongitude());    
 		
 	}
+	
+
 	
 }

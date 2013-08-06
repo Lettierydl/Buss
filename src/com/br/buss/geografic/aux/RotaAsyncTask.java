@@ -1,4 +1,4 @@
-package com.br.buss.geografic;
+package com.br.buss.geografic.aux;
 
 import java.util.Locale;
 
@@ -15,7 +15,7 @@ public class RotaAsyncTask extends AsyncTask<Double, Void, Void> {
 	private ProgressDialog dialog;
 	private GoogleMap mapView;
 	private Context context;
-	private Route rota;
+	private CriadoraDeRota rota;
 
 	public RotaAsyncTask(Context ctx, GoogleMap mapa) {
 		mapView = mapa;
@@ -27,7 +27,10 @@ public class RotaAsyncTask extends AsyncTask<Double, Void, Void> {
 		super.onPreExecute();
 		dialog = ProgressDialog.show(context, "Aguarde", "Calculando rota");
 	}
-
+	
+	
+	
+	//É chamado para executar
 	@Override
 	protected Void doInBackground(Double... params) {
 
@@ -39,18 +42,26 @@ public class RotaAsyncTask extends AsyncTask<Double, Void, Void> {
 	@Override
 	protected void onPostExecute(Void result) {
 		super.onPostExecute(result);
+		
+		pintarRotaNoMap();
+		
+		dialog.dismiss();
+	}
+
+	private void pintarRotaNoMap(){
 		PolylineOptions options = new PolylineOptions().width(5)
-				.color(Color.RED).visible(true);
+				.color(Color.BLUE).visible(true);
 
 		for (LatLng latlng : rota.getPoints()) {
 			options.add(latlng);
 		}
-
+		
+		
+		// se comentar essa linha a rota nao sera pintada no mapa
 		mapView.addPolyline(options);
-		dialog.dismiss();
 	}
-
-	private Route directions(final LatLng start, final LatLng dest) {
+	
+	private CriadoraDeRota directions(final LatLng start, final LatLng dest) {
 
 		// Formatando a URL com a latitude e longitude
 		// de origem e destino.

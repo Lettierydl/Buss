@@ -1,3 +1,6 @@
 eclipse.preferences.version=1
 encoding//src/com/br/buss/MainActivity.java=UTF-8
-encoding//src/com/br/buss/geografic/GoogleParser.java=UTF-8
+encoding//src/com/br/buss/geografic/aux/Auxiliares.java=UTF-8
+encoding//src/com/br/buss/geografic/aux/GoogleParser.java=UTF-8
+encoding//src/com/br/buss/geografic/aux/Localizacao.java=UTF-8
+encoding//src/com/br/buss/geografic/aux/RotaAsyncTask.java=UTF-8

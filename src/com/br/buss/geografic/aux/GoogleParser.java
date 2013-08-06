@@ -1,4 +1,4 @@
-package com.br.buss.geografic;
+package com.br.buss.geografic.aux;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -27,9 +27,9 @@ public class GoogleParser {
 	    }  
 	  }  
 	   
-	  public Route parse() {  
+	  public CriadoraDeRota parse() {  
 	    // Cria uma rota vazia  
-	    final Route route = new Route();  
+	    final CriadoraDeRota route = new CriadoraDeRota();  
 	    try {  
 	      // Obtém a String do JSON  
 	      final String result =   
